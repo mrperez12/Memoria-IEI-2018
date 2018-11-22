@@ -8,6 +8,7 @@ TagManager:
   - dangerzone
   - door
   - Wall
+  - Stairs
   layers:
   - Default
   - TransparentFX

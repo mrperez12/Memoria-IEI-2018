@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class shake : MonoBehaviour {
 
@@ -63,6 +64,7 @@ public class shake : MonoBehaviour {
 		}
 		gradorichter = 7f + Mathf.Log(amount,2);
 		if(time > durationP + durationS - epidelay) finished = true;
+		if(finished) SceneManager.LoadScene (3);
 	}
 	void OnGUI()
 	{

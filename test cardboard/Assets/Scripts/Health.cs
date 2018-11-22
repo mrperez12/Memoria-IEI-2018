@@ -8,8 +8,7 @@ public class Health : MonoBehaviour {
 	public Slider health;
 	public bool safe;
 	public bool danger;
-	public GameObject safeSymbol;
-	public GameObject safeParticles;
+	public static int discoveredZones = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -27,8 +26,6 @@ public class Health : MonoBehaviour {
 			//Debug.Log ("Safe ZONE MADAFAKA");
 			safe = true;
 			InvokeRepeating ("HealDamage", 0.1f, 1.0f);
-			safeSymbol.SetActive (true);
-			safeParticles.SetActive (true);
 		}
 		if (other.tag == "dangerzone") {
 			//Debug.Log ("DANGEROUS ZONE MADAFAKA");

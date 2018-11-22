@@ -7,7 +7,8 @@ public class ZoneFinder : MonoBehaviour {
 	
 	public GameObject safeSymbol;
 	public GameObject safeParticles;
-	public Image symbol;
+	int max = 1;
+	int i = 0;
 
 
 	// Use this for initialization
@@ -17,13 +18,18 @@ public class ZoneFinder : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		
 	}
 	void OnTriggerEnter (Collider other){
 		if (other.tag == "Player") {
 			safeSymbol.SetActive (true);
 			safeParticles.SetActive (true);
-			symbol.color = Color.white;
+			if(i<max){
+				Health.discoveredZones += 1;
+				Debug.Log (Health.discoveredZones);
+				i += 1;
+			}
 		}
 	}
 }
