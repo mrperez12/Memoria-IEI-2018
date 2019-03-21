@@ -8,6 +8,7 @@ public class VRCamRecenter : MonoBehaviour {
 	public Camera cam;
 
 	// Use this for initialization
+	// Script utilizado para centrar la camara con los paneles al pasar de una escena a otra.
 	void Start () {
 		InputTracking.disablePositionalTracking = true;
 		InputTracking.Recenter ();

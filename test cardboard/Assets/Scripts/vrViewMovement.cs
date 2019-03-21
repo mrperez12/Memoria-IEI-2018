@@ -5,6 +5,7 @@ using UnityEngine;
 public class vrViewMovement : MonoBehaviour {
 
 	public Transform vrCamera;
+	public GameObject menu;
 	public float toggleAngle = 30.0f;
 	public float upperToggleAngle = 90.0f;
 	public float speed = 3.0f;
@@ -24,6 +25,9 @@ public class vrViewMovement : MonoBehaviour {
 		if (vrCamera.eulerAngles.x >= toggleAngle && vrCamera.eulerAngles.x < upperToggleAngle) {
 			move = true;
 		} else {
+			Vector3 menuposition = menu.transform.eulerAngles;
+			menuposition.y = vrCamera.transform.eulerAngles.y;
+			menu.transform.eulerAngles = menuposition;
 			move = false;
 		}
 		if (move) {

@@ -9,6 +9,7 @@ public class Health : MonoBehaviour {
 	public bool safe;
 	public bool danger;
 	public static int discoveredZones = 0;
+	public static int crucialActions = 0;
 
 	// Use this for initialization
 	void Start () {

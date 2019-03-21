@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class shake : MonoBehaviour {
 
+	public int level;
 	public float speed = 1f; //velocidad de la oscilacion, puede ajustarse en el editor
 	public float amount = 1f; //intensidad de la oscilacion, puede ajustarse en el editor
 	public static float posX; // acceleracion en X
@@ -22,7 +23,7 @@ public class shake : MonoBehaviour {
 	public float durationS;
 	public float durationP;
 	public float time = 0;
-	public float gradorichter;
+	public float gradorichter; //Grados representados en la escala de mercalli
 	public float epidist;
 	public float epidelay;
 	public float randomfactor;
@@ -37,7 +38,7 @@ public class shake : MonoBehaviour {
 		//duration = Random.Range (10f, 60f);
 		amount = Mathf.Pow (2,PlayerPrefs.GetFloat("grado")-6.5f);//Random.Range (1f, 2.1f);
 		//amount = Mathf.Pow (2,gradorichter-6.5f);
-		Debug.Log ("ESTE GRADO M3N " + amount);
+		Debug.Log ("Grado " + amount);
 		//epidelay = 24;//Random.Range (0f, 30f);
 		epidist = epidelay * 2000;// 4500 * x - 2500 * x, distancia al epicentro en metros
 		GetComponent<AudioSource>().clip = sound;
@@ -64,7 +65,7 @@ public class shake : MonoBehaviour {
 		}
 		gradorichter = 7f + Mathf.Log(amount,2);
 		if(time > durationP + durationS - epidelay) finished = true;
-		if(finished) SceneManager.LoadScene (3);
+		if(finished) SceneManager.LoadScene (level);
 	}
 	void OnGUI()
 	{
