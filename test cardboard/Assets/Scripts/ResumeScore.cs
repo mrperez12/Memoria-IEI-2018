@@ -16,6 +16,7 @@ public class ResumeScore : MonoBehaviour {
 	public Image symbol8;
 	public Image symbol9;
 	public Button button;
+	public Button info;
 	public Image key1;
 	public Image key2;
 	public Image key3;
@@ -128,6 +129,7 @@ public class ResumeScore : MonoBehaviour {
 		Health.discoveredZones = 0;
 		Health.crucialActions = 0;
 		button.gameObject.SetActive (true);
+		info.gameObject.SetActive (true);
 
 	}
 
